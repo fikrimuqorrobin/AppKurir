@@ -31,7 +31,7 @@ public class TarifDao {
     public TarifDao() {
         try {
             Scanner scan;
-            scan = new Scanner(new File(TarifDao.class.getResource("/com/muqorrobin/data/OngkosKirim.txt").getFile()));
+            scan = new Scanner(new File(TarifDao.class.getResource("/com/muqorrobin/data/ongkosKirim.txt").getFile()));
             while (scan.hasNextLine()) {
                 String barisFile = scan.nextLine();
                 String[] dataTarif = barisFile.split(",");
