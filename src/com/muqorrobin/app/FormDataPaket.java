@@ -13,7 +13,7 @@ import com.muqorrobin.model.Person;
  * @author M Fikri Muqorrobin
  */
 public class FormDataPaket extends javax.swing.JFrame {
-    TarifDao TD;
+    TarifDao TD = new TarifDao();
     /**
      * Creates new form KurirForm
      */
@@ -264,17 +264,37 @@ public class FormDataPaket extends javax.swing.JFrame {
 
         jLabel8.setText("Nomor Paket");
 
-        inNomorPaket.setEditable(false);
-
         jLabel9.setText("Kota Tujuan");
-
-        inKotaTujuan.setEditable(false);
 
         jLabel10.setText("Jenis Barang");
 
         comboJenisBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel11.setText("Nama Barang");
+
+        inNamaBarang.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                inNamaBarangInputMethodTextChanged(evt);
+            }
+        });
+        inNamaBarang.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                inNamaBarangPropertyChange(evt);
+            }
+        });
+        inNamaBarang.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                inNamaBarangKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                inNamaBarangKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inNamaBarangKeyTyped(evt);
+            }
+        });
 
         jLabel12.setText("Berat Barang");
 
@@ -538,6 +558,31 @@ public class FormDataPaket extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inNamaBarangInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inNamaBarangInputMethodTextChanged
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_inNamaBarangInputMethodTextChanged
+
+    private void inNamaBarangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_inNamaBarangPropertyChange
+        // TODO add your handling code here:
+         
+    }//GEN-LAST:event_inNamaBarangPropertyChange
+
+    private void inNamaBarangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inNamaBarangKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_inNamaBarangKeyPressed
+
+    private void inNamaBarangKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inNamaBarangKeyTyped
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_inNamaBarangKeyTyped
+
+    private void inNamaBarangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inNamaBarangKeyReleased
+        // TODO add your handling code here:
+        inTotalBiaya.setText(inNamaBarang.getText());
+    }//GEN-LAST:event_inNamaBarangKeyReleased
 
     /**
      * @param args the command line arguments
