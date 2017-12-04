@@ -26,12 +26,12 @@ public class TarifDao {
     Date now = new Date();
     private List<Tarif> tarifTarif = new ArrayList<>();
     private List<String> kotaKota = new ArrayList<>();
-    private List<Person> pelanggan = new ArrayList<>();
+    private Person[] pelanggan;
     
     public TarifDao() {
         try {
             Scanner scan;
-            scan = new Scanner(new File(TarifDao.class.getResource("/com/muqorrobin/data/ongkosKirim.txt").getFile()));
+            scan = new Scanner(new File(TarifDao.class.getResource("/com/muqorrobin/data/OngkosKirim.txt").getFile()));
             while (scan.hasNextLine()) {
                 String barisFile = scan.nextLine();
                 String[] dataTarif = barisFile.split(",");
@@ -49,7 +49,7 @@ public class TarifDao {
             Logger.getLogger(TarifDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-        
+       
     public String[] kotaTujuannya(){
         String[] list = {} ;
         for (Tarif tarif : getTarifTarif()) {
@@ -75,17 +75,16 @@ public class TarifDao {
     /**
      * @return the pelanggan
      */
-    public List<Person> getPelanggan() {
+    public Person[] getPelanggan() {
         return pelanggan;
     }
 
     /**
      * @param pelanggan the pelanggan to set
      */
-    public void setPelanggan(List<Person> pelanggan) {
+    public void setPelanggan(Person[] pelanggan) {
         this.pelanggan = pelanggan;
     }
-    
-    
+
     
 }
