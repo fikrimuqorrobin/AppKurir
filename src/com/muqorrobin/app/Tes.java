@@ -26,7 +26,6 @@ public class Tes {
     public static void main(String[] args) {
         // TODO code application logic here
         Date now = new Date();
-        //TarifDao td = new TarifDao();
         
         Address alamatPengirim = new Address("tes pengirim","Provinsi 1","Kota 1",1234,"089610202");
         Address alamatPenerima = new Address("tes penerima","Provinsi 4","Medan",3422,"034024322");

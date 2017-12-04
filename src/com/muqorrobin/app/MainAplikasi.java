@@ -315,7 +315,7 @@ public class MainAplikasi extends javax.swing.JFrame {
             form2.setVisible(true);
             this.setVisible(false);
         } catch (Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Error");
+            JOptionPane.showMessageDialog(rootPane, e);
         }
         
     }//GEN-LAST:event_buttonSimpanActionPerformed
@@ -336,8 +336,9 @@ public class MainAplikasi extends javax.swing.JFrame {
         Address alamatPenerima = new Address(inAlamatPenerima.getText(), inProvinsiPenerima.getText(), comboKotaPenerima.getSelectedItem().toString(), Integer.parseInt(inPosPenerima.getText()), inTeleponPenerima.getText());
         Person pengirim = new Person(inNamaPengirim.getText(), alamatPengirim);
         Person penerima = new Person(inNamaPenerima.getText(), alamatPenerima);
-        td.getPelanggan().add(pengirim);
-        td.getPelanggan().add(penerima);
+//        td.getPelanggan().add(pengirim);
+//        td.getPelanggan().add(penerima);
+        Person[] pelanggan = {penerima, pengirim};
     }
     
     /**

@@ -13,22 +13,17 @@ import com.muqorrobin.model.Person;
  * @author M Fikri Muqorrobin
  */
 public class FormDataPaket extends javax.swing.JFrame {
-    TarifDao TD = new TarifDao();
+
     /**
      * Creates new form KurirForm
      */
     public FormDataPaket() {
         initComponents();
-        //loadCustomer();
         this.setLocationRelativeTo(null);
+       
     }
     
-    private void loadCustomer(){
-        for (Person p : TD.getPelanggan()) {
-            infoNamaPenerima.setText(p.getNama());
-        }
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,24 +38,10 @@ public class FormDataPaket extends javax.swing.JFrame {
         pembayaranGroup = new javax.swing.ButtonGroup();
         panelJudul = new javax.swing.JPanel();
         labelJudul = new javax.swing.JLabel();
-        panelPengirim = new javax.swing.JPanel();
-        infoNamaPengirim = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        infoKotaPengirim = new javax.swing.JTextField();
-        infoTeleponPengirim = new javax.swing.JTextField();
-        panelPenerima = new javax.swing.JPanel();
-        infoNamaPenerima = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        infoKotaPenerima = new javax.swing.JTextField();
-        infoTeleponPenerima = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         labelWaktu = new javax.swing.JLabel();
         labelTanggal = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        panelDataPaket = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         inNomorPaket = new javax.swing.JTextField();
@@ -98,6 +79,34 @@ public class FormDataPaket extends javax.swing.JFrame {
         radioDebit = new javax.swing.JRadioButton();
         radioCC = new javax.swing.JRadioButton();
         buttonCetak = new javax.swing.JButton();
+        panelPengirim = new javax.swing.JPanel();
+        inNamaPengirim = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        inAlamatPengirim = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        inTeleponPengirim = new javax.swing.JFormattedTextField();
+        comboKota = new javax.swing.JComboBox<>();
+        inPosPengirim = new javax.swing.JTextField();
+        inProvinsi = new javax.swing.JTextField();
+        panelPengirim1 = new javax.swing.JPanel();
+        inNamaPenerima = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        inAlamatPenerima = new javax.swing.JTextArea();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        inTeleponPenerima = new javax.swing.JFormattedTextField();
+        comboKotaPenerima = new javax.swing.JComboBox<>();
+        inPosPenerima = new javax.swing.JTextField();
+        inProvinsiPenerima = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,7 +125,7 @@ public class FormDataPaket extends javax.swing.JFrame {
             panelJudulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelJudulLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelJudul, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)
+                .addComponent(labelJudul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelJudulLayout.setVerticalGroup(
@@ -125,106 +134,6 @@ public class FormDataPaket extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(labelJudul, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                 .addContainerGap())
-        );
-
-        panelPengirim.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Pengirim :"));
-
-        infoNamaPengirim.setEditable(false);
-
-        jLabel2.setText("Nama Pengirim");
-
-        jLabel3.setText("Kota Pengirim");
-
-        jLabel4.setText("Telepon Pengirim");
-
-        infoKotaPengirim.setEditable(false);
-
-        infoTeleponPengirim.setEditable(false);
-
-        javax.swing.GroupLayout panelPengirimLayout = new javax.swing.GroupLayout(panelPengirim);
-        panelPengirim.setLayout(panelPengirimLayout);
-        panelPengirimLayout.setHorizontalGroup(
-            panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPengirimLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infoNamaPengirim)
-                    .addComponent(infoKotaPengirim)
-                    .addGroup(panelPengirimLayout.createSequentialGroup()
-                        .addGroup(panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(infoTeleponPengirim))
-                .addContainerGap())
-        );
-        panelPengirimLayout.setVerticalGroup(
-            panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPengirimLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoNamaPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoKotaPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoTeleponPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panelPenerima.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Penerima :"));
-
-        infoNamaPenerima.setEditable(false);
-
-        jLabel5.setText("Nama Penerima");
-
-        jLabel6.setText("Kota Penerima");
-
-        jLabel7.setText("Telepon Penerima");
-
-        infoKotaPenerima.setEditable(false);
-
-        infoTeleponPenerima.setEditable(false);
-
-        javax.swing.GroupLayout panelPenerimaLayout = new javax.swing.GroupLayout(panelPenerima);
-        panelPenerima.setLayout(panelPenerimaLayout);
-        panelPenerimaLayout.setHorizontalGroup(
-            panelPenerimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPenerimaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelPenerimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infoNamaPenerima)
-                    .addComponent(infoKotaPenerima)
-                    .addGroup(panelPenerimaLayout.createSequentialGroup()
-                        .addGroup(panelPenerimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(0, 233, Short.MAX_VALUE))
-                    .addComponent(infoTeleponPenerima))
-                .addContainerGap())
-        );
-        panelPenerimaLayout.setVerticalGroup(
-            panelPenerimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPenerimaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoNamaPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoKotaPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoTeleponPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));
@@ -258,7 +167,7 @@ public class FormDataPaket extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)), "Data Paket"));
+        panelDataPaket.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)), "Data Paket"));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));
 
@@ -272,27 +181,9 @@ public class FormDataPaket extends javax.swing.JFrame {
 
         jLabel11.setText("Nama Barang");
 
-        inNamaBarang.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                inNamaBarangInputMethodTextChanged(evt);
-            }
-        });
-        inNamaBarang.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                inNamaBarangPropertyChange(evt);
-            }
-        });
         inNamaBarang.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                inNamaBarangKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 inNamaBarangKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                inNamaBarangKeyTyped(evt);
             }
         });
 
@@ -480,15 +371,15 @@ public class FormDataPaket extends javax.swing.JFrame {
         buttonCetak.setText("Cetak Resi");
         buttonCetak.setEnabled(false);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelDataPaketLayout = new javax.swing.GroupLayout(panelDataPaket);
+        panelDataPaket.setLayout(panelDataPaketLayout);
+        panelDataPaketLayout.setHorizontalGroup(
+            panelDataPaketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDataPaketLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelDataPaketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(panelDataPaketLayout.createSequentialGroup()
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(radioCash)
@@ -497,26 +388,174 @@ public class FormDataPaket extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(radioCC)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelDataPaketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(buttonCetak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        panelDataPaketLayout.setVerticalGroup(
+            panelDataPaketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDataPaketLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelDataPaketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(7, 7, 7)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelDataPaketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(radioCash)
                     .addComponent(radioDebit)
                     .addComponent(radioCC)
                     .addComponent(buttonCetak))
                 .addGap(4, 4, 4))
+        );
+
+        panelPengirim.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Data Pengirim"));
+
+        jLabel2.setText("Nama");
+
+        jLabel3.setText("Alamat");
+
+        inAlamatPengirim.setColumns(20);
+        inAlamatPengirim.setRows(5);
+        jScrollPane1.setViewportView(inAlamatPengirim);
+
+        jLabel4.setText("Kota");
+
+        jLabel5.setText("Provinsi");
+
+        jLabel6.setText("Kode Pos");
+
+        jLabel7.setText("Telepon");
+
+        comboKota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DKI Jakarta" }));
+
+        javax.swing.GroupLayout panelPengirimLayout = new javax.swing.GroupLayout(panelPengirim);
+        panelPengirim.setLayout(panelPengirimLayout);
+        panelPengirimLayout.setHorizontalGroup(
+            panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPengirimLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inNamaPengirim)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                    .addComponent(inTeleponPengirim)
+                    .addComponent(comboKota, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inPosPengirim)
+                    .addGroup(panelPengirimLayout.createSequentialGroup()
+                        .addGroup(panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(inProvinsi))
+                .addContainerGap())
+        );
+        panelPengirimLayout.setVerticalGroup(
+            panelPengirimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPengirimLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inNamaPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(comboKota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inProvinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inPosPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inTeleponPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelPengirim1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Data Penerima"));
+
+        jLabel22.setText("Nama");
+
+        jLabel23.setText("Alamat");
+
+        inAlamatPenerima.setColumns(20);
+        inAlamatPenerima.setRows(5);
+        jScrollPane2.setViewportView(inAlamatPenerima);
+
+        jLabel24.setText("Kota");
+
+        jLabel25.setText("Provinsi");
+
+        jLabel28.setText("Kode Pos");
+
+        jLabel29.setText("Telepon");
+
+        comboKotaPenerima.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DKI Jakarta" }));
+
+        javax.swing.GroupLayout panelPengirim1Layout = new javax.swing.GroupLayout(panelPengirim1);
+        panelPengirim1.setLayout(panelPengirim1Layout);
+        panelPengirim1Layout.setHorizontalGroup(
+            panelPengirim1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPengirim1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelPengirim1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inNamaPenerima)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                    .addComponent(inTeleponPenerima)
+                    .addComponent(comboKotaPenerima, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inPosPenerima)
+                    .addGroup(panelPengirim1Layout.createSequentialGroup()
+                        .addGroup(panelPengirim1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel29))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(inProvinsiPenerima))
+                .addContainerGap())
+        );
+        panelPengirim1Layout.setVerticalGroup(
+            panelPengirim1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPengirim1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inNamaPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(comboKotaPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inProvinsiPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inPosPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inTeleponPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -527,14 +566,13 @@ public class FormDataPaket extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelJudul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panelPengirim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelPenerima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(panelJudul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(panelPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelPengirim1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addComponent(panelDataPaket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -543,13 +581,11 @@ public class FormDataPaket extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(panelJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(panelPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(panelPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelPengirim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelPengirim1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelDataPaket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -558,26 +594,6 @@ public class FormDataPaket extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inNamaBarangInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inNamaBarangInputMethodTextChanged
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_inNamaBarangInputMethodTextChanged
-
-    private void inNamaBarangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_inNamaBarangPropertyChange
-        // TODO add your handling code here:
-         
-    }//GEN-LAST:event_inNamaBarangPropertyChange
-
-    private void inNamaBarangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inNamaBarangKeyPressed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_inNamaBarangKeyPressed
-
-    private void inNamaBarangKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inNamaBarangKeyTyped
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_inNamaBarangKeyTyped
 
     private void inNamaBarangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inNamaBarangKeyReleased
         // TODO add your handling code here:
@@ -627,23 +643,29 @@ public class FormDataPaket extends javax.swing.JFrame {
     private javax.swing.JButton buttonCetak;
     private javax.swing.JComboBox<String> comboJenisBarang;
     private javax.swing.JComboBox<String> comboJenisLayanan;
+    private javax.swing.JComboBox<String> comboKota;
+    private javax.swing.JComboBox<String> comboKotaPenerima;
+    private javax.swing.JTextArea inAlamatPenerima;
+    private javax.swing.JTextArea inAlamatPengirim;
     private javax.swing.JTextField inBerat;
     private javax.swing.JFormattedTextField inHargaBarang;
     private javax.swing.JTextField inKotaTujuan;
     private javax.swing.JTextField inL;
     private javax.swing.JTextField inNamaBarang;
+    private javax.swing.JTextField inNamaPenerima;
+    private javax.swing.JTextField inNamaPengirim;
     private javax.swing.JTextField inNomorPaket;
     private javax.swing.JTextField inP;
+    private javax.swing.JTextField inPosPenerima;
+    private javax.swing.JTextField inPosPengirim;
+    private javax.swing.JTextField inProvinsi;
+    private javax.swing.JTextField inProvinsiPenerima;
     private javax.swing.JTextField inT;
     private com.toedter.calendar.JDateChooser inTanggalKirim;
     private javax.swing.JTextField inTarif;
+    private javax.swing.JFormattedTextField inTeleponPenerima;
+    private javax.swing.JFormattedTextField inTeleponPengirim;
     private javax.swing.JFormattedTextField inTotalBiaya;
-    private javax.swing.JTextField infoKotaPenerima;
-    private javax.swing.JTextField infoKotaPengirim;
-    private javax.swing.JTextField infoNamaPenerima;
-    private javax.swing.JTextField infoNamaPengirim;
-    private javax.swing.JTextField infoTeleponPenerima;
-    private javax.swing.JTextField infoTeleponPengirim;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -657,8 +679,14 @@ public class FormDataPaket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -668,14 +696,16 @@ public class FormDataPaket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelJudul;
     private javax.swing.JLabel labelTanggal;
     private javax.swing.JLabel labelWaktu;
+    private javax.swing.JPanel panelDataPaket;
     private javax.swing.JPanel panelJudul;
-    private javax.swing.JPanel panelPenerima;
     private javax.swing.JPanel panelPengirim;
+    private javax.swing.JPanel panelPengirim1;
     private javax.swing.ButtonGroup pembayaranGroup;
     private javax.swing.JRadioButton radioCC;
     private javax.swing.JRadioButton radioCash;
