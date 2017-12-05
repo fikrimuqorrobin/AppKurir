@@ -24,6 +24,7 @@ public class TarifDao {
     SimpleDateFormat sd = new SimpleDateFormat("dd-MM-yyyy");
     Date now = new Date();
     private List<Tarif> tarifTarif = new ArrayList<>();
+    private List<String> kotaKota = new ArrayList<>();
     
     public TarifDao() {
         try {
@@ -41,6 +42,7 @@ public class TarifDao {
                 double tarifHDS = Double.parseDouble(dataTarif[5]);
                 Tarif tarif = new Tarif(kota, tarifReguler, tarifKilat, tarifSDS, tarifONS, tarifHDS);
                 getTarifTarif().add(tarif);
+                getKotaKota().add(kota);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TarifDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -53,6 +55,20 @@ public class TarifDao {
      */
     public List<Tarif> getTarifTarif() {
         return tarifTarif;
+    }
+
+    /**
+     * @return the kotaKota
+     */
+    public List<String> getKotaKota() {
+        return kotaKota;
+    }
+
+    /**
+     * @param kotaKota the kotaKota to set
+     */
+    public void setKotaKota(List<String> kotaKota) {
+        this.kotaKota = kotaKota;
     }
    
 }

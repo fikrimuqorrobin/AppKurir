@@ -6,7 +6,6 @@
  */
 package com.muqorrobin.model;
 
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -14,47 +13,24 @@ import java.util.Random;
  * @author M Fikri Muqorrobin
  */
 public class Order {
+
     private String noResi;
-    private List<Person> person;
+    private Person[] person;
     private Paket paket;
-    private Tarif tarif;
-    
+
     public Order() {
     }
 
-    public Order(String noResi, Paket paket, Tarif tarif, List<Person> person) {
-        this.noResi = noResi;
-        this.paket = paket;
-        this.tarif = tarif;
+    public Order( Person[] person, Paket paket) {
         this.person = person;
+        this.paket = paket;
     }
 
     /**
      * @return the noResi
      */
     public String getNoResi() {
-        return noResi+""+generateResi();
-    }
-
-    /**
-     * @param noResi the noResi to set
-     */
-    public void setNoResi(String noResi) {
-        this.noResi = noResi;
-    }
-
-    /**
-     * @return the person
-     */
-    public List<Person> getPerson() {
-        return person;
-    }
-
-    /**
-     * @param person the person to set
-     */
-    public void setPerson(List<Person> person) {
-        this.person = person;
+        return getPaket().getNomorPaket()+"-DEC-17-"+ generateResi();
     }
 
     /**
@@ -70,27 +46,26 @@ public class Order {
     public void setPaket(Paket paket) {
         this.paket = paket;
     }
-    
-    private int generateResi(){
+
+    private int generateResi() {
         Random rd = new Random();
         int x = rd.nextInt(999);
-        int resi = getPaket().getNomorPaket() + x ;
+        int resi = getPaket().getNomorPaket() + x;
         return resi;
     }
 
     /**
-     * @return the tarif
+     * @return the person
      */
-    public Tarif getTarif() {
-        return tarif;
+    public Person[] getPerson() {
+        return person;
     }
 
     /**
-     * @param tarif the tarif to set
+     * @param person the person to set
      */
-    public void setTarif(Tarif tarif) {
-        this.tarif = tarif;
+    public void setPerson(Person[] person) {
+        this.person = person;
     }
-    
-    
+
 }
