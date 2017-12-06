@@ -28,8 +28,8 @@ public class TarifDao {
     
     public TarifDao() {
         try {
-            //Scanner scan = new Scanner(new File(TarifDao.class.getResource("/com/muqorrobin/data/ongkosKirim.txt").getFile()));
-            Scanner scan = new Scanner(new File("D:/Document/BOOTCAMP JAVA/GITHUB/AppKurir(Fikri)/AppKurir/src/com/muqorrobin/data/ongkosKirim.txt"));
+            Scanner scan = new Scanner(new File(TarifDao.class.getResource("/com/muqorrobin/data/ongkosKirim.txt").getFile()));
+            //Scanner scan = new Scanner(new File("D:/Document/BOOTCAMP JAVA/GITHUB/AppKurir(Fikri)/AppKurir/src/com/muqorrobin/data/ongkosKirim.txt"));
             
             while (scan.hasNextLine()) {
                 String barisFile = scan.nextLine();
